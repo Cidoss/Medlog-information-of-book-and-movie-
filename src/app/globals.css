@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.medlog-card {
+  min-width: 130px;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Desain Tombol Banner Kategori Utama */
+.medlog-banner-btn {
+  width: 100%;
+  color: #ffffff;
+  font-weight: 900;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 2px solid #000000;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.75rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.medlog-more-btn {
+  min-width: 130px;
+  border: 2px solid #000000;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.medlog-more-btn:hover {
+  transform: scale(1.05);
 }
