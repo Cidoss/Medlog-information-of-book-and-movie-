@@ -12,15 +12,12 @@ const genreBuku = [
   'Mystery', 'Computers', 'Business', 'Poetry', 'Philosophy'
 ];
 
-
 export default function BookListPage() {
   const [booksByGenre, setBooksByGenre] = useState<{ [key: string]: Book[] }>({});
   const [selectedGenre, setSelectedGenre] = useState<string | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
-
-  // Ambil data 10 buku pertama untuk 5 kategori utama di homepage katalog buku
   useEffect(() => {
     const mainGenres = genreBuku.slice(0, 5);
     
@@ -70,17 +67,16 @@ export default function BookListPage() {
       )}
 
 
-      {/* ==================== 2. NAVBAR KATALOG BUKU ==================== */}
+      {/* header */}
       <nav className="flex justify-between items-center border-b-2 border-black pb-4 mb-10">
         <div className="flex items-center gap-3">
           <button onClick={() => setIsSidebarOpen(true)} className="border-2 border-black p-1.5 rounded-lg hover:bg-gray-100 font-bold">☰</button>
           <Link href="/"><h1 className="text-3xl font-black">MedLog <span className="text-blue-600 text-sm font-bold">Books</span></h1></Link>
         </div>
-        <input type="text" placeholder="Cari buku..." className="w-64 px-4 py-1.5 border-2 border-black rounded-full text-sm font-bold bg-white" />
       </nav>
 
 
-      {/* ==================== 3. KONTEN UTAMA (DUA KONDISI) ==================== */}
+      {/* genre buku */}
       {selectedGenre ? (
         <GenreBookList 
           genre={selectedGenre} 
@@ -115,8 +111,6 @@ export default function BookListPage() {
           </section>
         ))
       )}
-
-
     </div>
   );
 }
